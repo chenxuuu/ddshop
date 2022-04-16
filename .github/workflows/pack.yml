@@ -48,7 +48,7 @@ jobs:
           pkg: cmd/ddshop
           dest: build
           prefix: ddshop
-          targets: windows/amd64,linux/arm64,linux/amd64,darwin/arm64,darwin/amd64
+          targets: windows/amd64,linux/arm64
           v: true
           x: false
           race: false
@@ -59,9 +59,7 @@ jobs:
         run: |
           ls ./build
           mkdir -p release
-          mv $GITHUB_WORKSPACE/build/ddshop-darwin-10.16-amd64 release/ddshop_darwin_amd64 && chmod +x release/ddshop_darwin_amd64
-          mv $GITHUB_WORKSPACE/build/ddshop-darwin-10.16-arm64 release/ddshop_darwin_arm64 && chmod +x release/ddshop_darwin_arm64
-          mv $GITHUB_WORKSPACE/build/ddshop-linux-amd64 release/ddshop_linux_amd64 && chmod +x release/ddshop_linux_amd64
+          mv $GITHUB_WORKSPACE/build/ddshop-linux-arm64 release/ddshop_linux_arm64 && chmod +x release/ddshop_linux_arm64
           mv $GITHUB_WORKSPACE/build/ddshop-windows-4.0-amd64.exe release/ddshop_windows_amd64.exe
 
       - name: Upload artifact
