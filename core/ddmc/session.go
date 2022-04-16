@@ -33,7 +33,7 @@ import (
 	"github.com/tidwall/gjson"
 )
 
-const maxRetryCount = 100
+const maxRetryCount = 10000
 
 var (
 	ErrorNoValidProduct = errors.New("无有效商品")
